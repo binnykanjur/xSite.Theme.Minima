@@ -1,0 +1,52 @@
+﻿@page
+@using xSite
+@model PaginatedModel<PostInfo>
+@inject ISiteManager _siteManager
+
+@{
+    var siteInfo = await _siteManager.GetSiteInfoAsync();
+    ViewData["Title"] = siteInfo.Title;
+    ViewData["Description"] = siteInfo.Description;
+    ViewData["Author"] = siteInfo.Author;
+    ViewData["SiteInfo"] = siteInfo;
+}
+
+<div class="home">
+    <h2 class="post-list-heading">Posts</h2>
+    <ul class="post-list">
+
+        @foreach (var post in Model.Items) {
+            var postUrl = _siteManager.GetUrl(post);
+
+            <li>
+                <span class="post-meta">@post.PublishedOn.Value.ToString("MMMM d, yyyy")</span>
+                <h3>
+                    <a class="post-link" href="@postUrl">
+                        @post.Title
+                    </a>
+                </h3>
+                @post.Excerpt
+            </li>
+        }
+
+    </ul>
+
+    <div class="clearfix">
+        @if (Model.ShowPrevious) {
+            <a class="btn btn-primary float-left" href="@Model.GetPreviousPageUrl()">&larr; Previous</a>
+        }
+        @if (Model.ShowNext) {
+            <a class="btn btn-primary float-right" href="@Model.GetNextPageUrl()">Next &rarr;</a>
+        }
+    </div>
+
+    <p class="feed-subscribe">
+        <a href="feed.xml">
+            <svg class="svg-icon orange">
+                <use xlink:href="/minima-social-icons.svg#rss"></use>
+            </svg>
+            <span>Subscribe</span>
+        </a>
+    </p>
+
+</div>

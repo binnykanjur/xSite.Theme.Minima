@@ -1,0 +1,1 @@
+# A xSite version of [Jekyll's Mininma Theme](https://github.com/jekyll/minima)

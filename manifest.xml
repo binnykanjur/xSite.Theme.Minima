@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Identity Name="Minima.Theme" Version="0.0.1" />
+    <Dependencies>
+        <Engine MinVersion="0.0.5" />
+    </Dependencies>
+    <Properties>
+        <DisplayName>Minima</DisplayName>
+        <Description>A xSite version of Jekyll's Mininma Theme</Description>
+        <Logo>logo.png</Logo>
+        <Homepage>https://jekyll.github.io/minima/</Homepage>
+        <Author>Binny Kanjur</Author>
+        <AuthorPage>https://binnykanjur.com/</AuthorPage>
+    </Properties>
+    <License>SEE LICENSE IN LICENSE.txt</License>
+    <Categories>
+        <Category>Theme</Category>
+    </Categories>
+    <Keywords>
+        <string>bootstrap</string>
+    </Keywords>
+    <Repository>
+        <RepositoryType>Git</RepositoryType>
+        <Url>https://github.com/binnykanjur/xSite.Theme.Minima.git</Url>
+    </Repository>
+</Manifest>
